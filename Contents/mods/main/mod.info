@@ -2,7 +2,6 @@ id=skinningChucked
 name=Skinning Chucked
 description= 
 poster=poster.png
-require=ProjectMMOboid
 tags=Build 41
 versionMin=41.0
 
