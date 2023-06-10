@@ -57,7 +57,7 @@ module Base {
         LvlSkillTrained = 7,
         NumLevelsTrained = 2,
         StaticModel = Book,
-        WorldStaticModel = BookClosedYellowBrown_Ground,
+        WorldStaticModel = BookRedPink_Ground,
     }
 
      item BookSkinning5
@@ -72,7 +72,7 @@ module Base {
         LvlSkillTrained = 9,
         NumLevelsTrained = 2,
         StaticModel = Book,
-        WorldStaticModel = BookClosedYellowBrown_Ground,
+        WorldStaticModel = BookRedPink_Ground,
      }
 
 }
