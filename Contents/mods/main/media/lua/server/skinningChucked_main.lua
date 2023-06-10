@@ -2,12 +2,37 @@ require "recipecode"
 
 --[[
 local originalCutFillet = Recipe.OnCreate.CutFillet
-function Recipe.OnCreate.CutFillet(items, result, player) originalCutFillet(items, result, player) end
-
+function Recipe.OnCreate.CutFillet(items, result, player)
+    originalCutFillet(items, result, player)
+end
+--]]
 
 local originalCutFish = Recipe.OnCreate.CutFish
-function Recipe.OnCreate.CutFish(items, result, player) originalCutFish(items, result, player) end
---]]
+function Recipe.OnCreate.CutFish(items, result, player)
+
+    --    local fish = nil;
+    --    for i=0,items:size() - 1 do
+    --        if instanceof(items:get(i), "Food") then
+    --            fish = items:get(i);
+    --            break;
+    --        end
+    --    end
+    --    if fish then
+    --        local hunger = math.max(fish:getBaseHunger(), fish:getHungChange())
+    --        result:setBaseHunger(hunger / 2);
+    --        result:setHungChange(hunger / 2);
+    --        result:setActualWeight((fish:getActualWeight() * 0.9) / 2)
+    --        result:setWeight(result:getActualWeight());
+    --        result:setCustomWeight(true)
+    --        result:setCarbohydrates(fish:getCarbohydrates() / 2);
+    --        result:setLipids(fish:getLipids() / 2);
+    --        result:setProteins(fish:getProteins() / 2);
+    --        result:setCalories(fish:getCalories() / 2);
+    --        result:setCooked(fish:isCooked());
+    --    end
+
+    originalCutFish(items, result, player)
+end
 
 
 local originalCutAnimal = Recipe.OnCreate.CutAnimal
@@ -48,7 +73,7 @@ end
 
 function Recipe.OverWriteButcherToSkinningXP()
 
-    local recipesToOverride = {"Butcher Small Animal", "Butcher Rabbit", "Butcher Bird",}-- "Slice Fillet"}
+    local recipesToOverride = {"Butcher Small Animal", "Butcher Rabbit", "Butcher Bird", "Slice Fillet"}
 
     local SM = getScriptManager()
     --local RM = SM:getAllRecipes()
