@@ -1,0 +1,26 @@
+module skinningChucked
+{
+    imports { Base }
+
+/* EDIBLE - Credit to Skizot */
+    item AnimalBones
+    {
+        DisplayCategory  = 	Junk,
+        Weight			 =	0.01,
+        Type			 =	Normal,
+        DisplayName		 =	Animal Bones,
+        Icon			 =	AnimalBones,
+        WorldStaticModel =  AnimalBones,
+    }
+
+    item LeatherScraps
+    {
+        DisplayCategory  = 	Junk,
+        Weight			 =	0.01,
+        Type			 =	Normal,
+        DisplayName		 =	Leather Scraps,
+        Icon			 =	LeatherScraps,
+        WorldStaticModel =  LeatherScraps,
+    }
+
+}

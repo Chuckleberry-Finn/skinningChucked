@@ -36,6 +36,7 @@ end
 
 
 local originalCutAnimal = Recipe.OnCreate.CutAnimal
+---@param player IsoPlayer|IsoGameCharacter
 function Recipe.OnCreate.CutAnimal(items, result, player)
 
     --    local anim = nil;
@@ -62,7 +63,9 @@ function Recipe.OnCreate.CutAnimal(items, result, player)
     --        result:setCalories(anim:getCalories() * 0.75);
     --        result:setCarbohydrates(anim:getCarbohydrates() * 0.75);
     --    end
-
+    
+    player:getInventory():AddItems("skinningChucked.AnimalBones",1)
+    player:getInventory():AddItems("skinningChucked.LeatherScraps",ZombRand(2)+1)
     originalCutAnimal(items, result, player)
 end
 
