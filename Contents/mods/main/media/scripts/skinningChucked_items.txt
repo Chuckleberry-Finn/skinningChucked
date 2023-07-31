@@ -3,6 +3,7 @@ module skinningChucked
     imports { Base }
 
 /* EDIBLE - Credit to Skizot */
+
     item AnimalBones
     {
         DisplayCategory  = 	Junk,
