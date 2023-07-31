@@ -11,12 +11,7 @@ local originalCutFish = Recipe.OnCreate.CutFish
 function Recipe.OnCreate.CutFish(items, result, player)
 
     --    local fish = nil;
-    --    for i=0,items:size() - 1 do
-    --        if instanceof(items:get(i), "Food") then
-    --            fish = items:get(i);
-    --            break;
-    --        end
-    --    end
+    --    for i=0,items:size() - 1 doif instanceof(items:get(i), "Food") thenfish = items:get(i);break; end end
     --    if fish then
     --        local hunger = math.max(fish:getBaseHunger(), fish:getHungChange())
     --        result:setBaseHunger(hunger / 2);
@@ -40,36 +35,35 @@ local originalCutAnimal = Recipe.OnCreate.CutAnimal
 function Recipe.OnCreate.CutAnimal(items, result, player)
 
     --    local anim = nil;
-    --    for i=0,items:size() - 1 do
-    --        if instanceof(items:get(i), "Food") then
-    --            anim = items:get(i);
-    --            break;
-    --        end
-    --    end
+    --    for i=0,items:size() - 1 do if instanceof(items:get(i), "Food") then anim = items:get(i); break;  end end
     --    if anim then
     --        local new_hunger = anim:getHungChange() * 1.05;
-    --        if(new_hunger < -100) then
-    --            new_hunger = -100;
-    --        end
+    --        if(new_hunger < -100) then new_hunger = -100;  end
     --        result:setBaseHunger(new_hunger);
     --        result:setHungChange(new_hunger);
-    --
     --        result:setCustomWeight(true);
     --        result:setWeight(anim:getWeight() * 0.7);
     --        result:setActualWeight(anim:getActualWeight() * 0.7);
-    --
     --        result:setLipids(anim:getLipids() * 0.75);
     --        result:setProteins(anim:getProteins() * 0.75);
     --        result:setCalories(anim:getCalories() * 0.75);
     --        result:setCarbohydrates(anim:getCarbohydrates() * 0.75);
     --    end
+
+    local skinningLevel = player:getPerkLevel(Perks.Skinning)
+    local success = 20 + (skinningLevel*8)
+    local drops = {"skinningChucked.AnimalBones", "skinningChucked.LeatherScraps"}
     
-    player:getInventory():AddItems("skinningChucked.AnimalBones",1)
-    player:getInventory():AddItems("skinningChucked.LeatherScraps",ZombRand(2)+1)
+    for drop=1, #drops do
+        if ZombRand(100) < success then
+            player:getInventory():AddItem(drops[drop])
+        end
+    end
+
     originalCutAnimal(items, result, player)
 end
 
 
 function Recipe.OnGiveXP.Skinning10(recipe, ingredients, result, player)
-    player:getXp():AddXP(Perks.Skinning, 10);
+    --player:getXp():AddXP(Perks.Skinning, 10);
 end
