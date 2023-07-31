@@ -87,6 +87,7 @@ function Recipe.OverWriteButcherToSkinningXP()
         if not recipe then
             print("ERR: OverWriteButcherToSkinningXP tried to find a recipe for `"..recipeID.."`!")
         else
+            print("skinningChucked: OverWriteButcherToSkinningXP: "..recipeID)
             recipe:setLuaGiveXP("Recipe.OnGiveXP.Skinning10")
             recipe:setCategory("Skinning")
         end

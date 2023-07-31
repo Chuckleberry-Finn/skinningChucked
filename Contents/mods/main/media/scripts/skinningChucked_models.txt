@@ -3,14 +3,14 @@ module Base
 /* Items - Credit to Skizot */
 	model AnimalBones
 	{
-		mesh = MADItems|AnimalBones,
+		mesh = skinningChucked_ItemModels|AnimalBones,
 		texture = skinningChucked_ItemTextures,
 		scale = 0.4,
 	}
 
 	model LeatherScraps
 	{
-		mesh = MADItems|LeatherScraps,
+		mesh = skinningChucked_ItemModels|LeatherScraps,
 		texture = skinningChucked_ItemTextures,
 		scale = 0.4,
 	}
