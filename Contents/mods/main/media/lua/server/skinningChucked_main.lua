@@ -51,7 +51,7 @@ function Recipe.OnCreate.CutAnimal(items, result, player)
     --    end
 
     local skinningLevel = player:getPerkLevel(Perks.Skinning)
-    local success = 20 + (skinningLevel*8)
+    local success = 20 + (skinningLevel*5)
     local drops = {"skinningChucked.AnimalBones", "skinningChucked.LeatherScraps"}
     
     for drop=1, #drops do
