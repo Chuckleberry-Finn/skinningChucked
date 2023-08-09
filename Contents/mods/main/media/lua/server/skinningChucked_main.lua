@@ -65,5 +65,5 @@ end
 
 
 function Recipe.OnGiveXP.Skinning10(recipe, ingredients, result, player)
-    --player:getXp():AddXP(Perks.Skinning, 10);
+    player:getXp():AddXP(Perks.Skinning, 10)
 end
